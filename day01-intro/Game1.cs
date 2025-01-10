@@ -8,6 +8,7 @@ namespace day01_intro;
 public class MyFirstGame : Game
 {
     private const int WindowWidth = 640, WindowHeight = 320;
+    private int temp;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
