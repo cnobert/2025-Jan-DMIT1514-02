@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day01-intro", "day01-intro\day01-intro.csproj", "{1D1045B6-7E86-49CA-8113-839D5A4B90AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day02-sprite", "day02-sprite\day02-sprite.csproj", "{0C795212-8DC9-4770-A98D-2A198E9D1DF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{1D1045B6-7E86-49CA-8113-839D5A4B90AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1045B6-7E86-49CA-8113-839D5A4B90AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1045B6-7E86-49CA-8113-839D5A4B90AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C795212-8DC9-4770-A98D-2A198E9D1DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C795212-8DC9-4770-A98D-2A198E9D1DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C795212-8DC9-4770-A98D-2A198E9D1DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C795212-8DC9-4770-A98D-2A198E9D1DF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,25 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Beetle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Beetle.png
+
+#begin Station.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Station.png
+
