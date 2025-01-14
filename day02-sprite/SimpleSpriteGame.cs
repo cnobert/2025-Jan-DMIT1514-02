@@ -6,10 +6,12 @@ namespace day02_sprite;
 
 public class SimpleSpriteGame : Game
 {
+    private const int _WindowWidth = 640, _WindowHeight = 320;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
     private Texture2D _backgroundImage, _beetleImage;
+    private float _x = 0, _y = 0;
 
     public SimpleSpriteGame()
     {
@@ -20,7 +22,9 @@ public class SimpleSpriteGame : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
+        _graphics.PreferredBackBufferHeight = _WindowHeight;
+        _graphics.PreferredBackBufferWidth = _WindowWidth;
+        _graphics.ApplyChanges();
 
         base.Initialize();
     }
@@ -34,11 +38,8 @@ public class SimpleSpriteGame : Game
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
-
-        // TODO: Add your update logic here
-
+        _x++; //or _x = x + 1; or _x += 1;
+        _y++;
         base.Update(gameTime);
     }
 
@@ -49,7 +50,8 @@ public class SimpleSpriteGame : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_backgroundImage, Vector2.Zero, Color.White);
-        _spriteBatch.Draw(_beetleImage, Vector2.Zero, Color.White);
+        _spriteBatch.Draw(_beetleImage, new Vector2(_x, _y), Color.White);
+        
 
         _spriteBatch.End();
 
