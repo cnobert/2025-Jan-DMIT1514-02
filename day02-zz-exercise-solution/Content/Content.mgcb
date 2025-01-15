@@ -13,3 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Beetle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Beetle.png
+
+#begin Station.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Station.png
+

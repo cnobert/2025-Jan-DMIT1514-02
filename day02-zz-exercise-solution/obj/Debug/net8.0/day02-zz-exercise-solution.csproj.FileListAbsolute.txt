@@ -24,3 +24,5 @@
 /Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/day02-zz-exercise-solution/obj/Debug/net8.0/day02-zz-exercise-solution.pdb
 /Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/day02-zz-exercise-solution/obj/Debug/net8.0/day02-zz-exercise-solution.genruntimeconfig.cache
 /Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/day02-zz-exercise-solution/obj/Debug/net8.0/ref/day02-zz-exercise-solution.dll
+/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/day02-zz-exercise-solution/bin/Debug/net8.0/Content/Beetle.xnb
+/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/day02-zz-exercise-solution/bin/Debug/net8.0/Content/Station.xnb
