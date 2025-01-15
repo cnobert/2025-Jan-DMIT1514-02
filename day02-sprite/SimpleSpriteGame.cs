@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace day02_sprite;
 
@@ -52,7 +51,6 @@ public class SimpleSpriteGame : Game
         _spriteBatch.Draw(_backgroundImage, Vector2.Zero, Color.White);
         _spriteBatch.Draw(_beetleImage, new Vector2(_x, _y), Color.White);
         
-
         _spriteBatch.End();
 
         base.Draw(gameTime);
