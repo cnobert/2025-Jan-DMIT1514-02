@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day02-sprite", "day02-sprit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day02-zz-exercise-solution", "day02-zz-exercise-solution\day02-zz-exercise-solution.csproj", "{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day03-animation", "day03-animation\day03-animation.csproj", "{A57A9ACC-0378-44EC-987D-4391995839D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57A9ACC-0378-44EC-987D-4391995839D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57A9ACC-0378-44EC-987D-4391995839D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57A9ACC-0378-44EC-987D-4391995839D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57A9ACC-0378-44EC-987D-4391995839D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
