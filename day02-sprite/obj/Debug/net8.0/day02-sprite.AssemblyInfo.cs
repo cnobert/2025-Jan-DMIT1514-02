@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("day02-sprite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8aabf1e1c55c237bf4f94f37dca38fe39f900da2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bde1bce95c65ea2314b2cd5370993f59c036e96")]
 [assembly: System.Reflection.AssemblyProductAttribute("day02-sprite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("day02-sprite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
