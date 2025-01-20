@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day01-intro", "day01-intro\day01-intro.csproj", "{1D1045B6-7E86-49CA-8113-839D5A4B90AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson02_importing_and_displaying_content", "lesson02_importing_and_displaying_content\lesson02_importing_and_displaying_content.csproj", "{1D1045B6-7E86-49CA-8113-839D5A4B90AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day02-sprite", "day02-sprite\day02-sprite.csproj", "{0C795212-8DC9-4770-A98D-2A198E9D1DF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson03_draw_sprite", "lesson03_draw_sprite\lesson03_draw_sprite.csproj", "{0C795212-8DC9-4770-A98D-2A198E9D1DF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day02-zz-exercise-solution", "day02-zz-exercise-solution\day02-zz-exercise-solution.csproj", "{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson03_draw_sprite_exercise_solution", "lesson03_draw_sprite_exercise_solution\lesson03_draw_sprite_exercise_solution.csproj", "{A7FE198D-6346-46E5-AADF-4BE5CED9E30B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day03-animation", "day03-animation\day03-animation.csproj", "{A57A9ACC-0378-44EC-987D-4391995839D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson04_animation", "lesson04_animation\lesson04_animation.csproj", "{A57A9ACC-0378-44EC-987D-4391995839D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
