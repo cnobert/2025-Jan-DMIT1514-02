@@ -39,11 +39,59 @@ public class KeyboardInputGame : Game
         KeyboardState kbCurrentState = Keyboard.GetState();
 
         _message = "";
+
+        #region arrow keys
         if(kbCurrentState.IsKeyDown(Keys.Down)) //down arrow
         {
             _message += "Down ";
         }
+        if(kbCurrentState.IsKeyDown(Keys.Up)) //up arrow
+        {
+            _message += "Up ";
+        }
+        if(kbCurrentState.IsKeyDown(Keys.Left)) //left arrow
+        {
+            _message += "Left ";
+        }
+        if(kbCurrentState.IsKeyDown(Keys.Right)) //right arrow
+        {
+            _message += "Right ";
+        }
+        #endregion
 
+        #region "key down" event
+        if(_kbPreviousState.IsKeyUp(Keys.Space) && kbCurrentState.IsKeyDown(Keys.Space))
+        {
+            _message += "---------------------------------------------------------------------------";
+            _message += "-----------------------------------------\n";
+            _message += "---------------------------------------------------------------------------";
+            _message += "-----------------------------------------\n";
+            _message += "---------------------------------------------------------------------------";
+            _message += "-----------------------------------------\n";
+            _message += "---------------------------------------------------------------------------";
+            _message += "-----------------------------------------\n";
+        }
+        #endregion
+        //"key hold event
+        else if(kbCurrentState.IsKeyDown(Keys.Space))
+        {
+            _message += "Space ";
+        }
+        #region "key up" event
+        else if (_kbPreviousState.IsKeyDown(Keys.Space))
+        {
+            //the space key is not being held down right now
+            //but it was being held down on the last call to Update()
+            //so, this is a "key up" event
+            _message += "#########################################################################\n";
+            _message += "#########################################################################\n";
+            _message += "#########################################################################\n";
+            _message += "#########################################################################\n";
+            _message += "#########################################################################\n";
+        }
+        #endregion
+
+        _kbPreviousState = kbCurrentState;
         base.Update(gameTime);
     }
 

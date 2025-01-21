@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson05_keyboard_input")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+657b20809a2c52a1eab7c0440a56cd6932ad3353")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b19dbac65532e1f43479d801b292c50cc0c4af8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson05_keyboard_input")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson05_keyboard_input")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
