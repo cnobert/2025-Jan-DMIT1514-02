@@ -51,7 +51,7 @@ public class AnimationGame : Game
 
         _spriteBatch.Begin();
 
-        _animationPlayer.Draw(_spriteBatch, Vector2.Zero, SpriteEffects.None);
+        _animationPlayer.Draw(_spriteBatch, Vector2.Zero, SpriteEffects.);
         _spriteBatch.End();
 
         base.Draw(gameTime);

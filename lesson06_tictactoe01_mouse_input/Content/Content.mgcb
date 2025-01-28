@@ -1,0 +1,30 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin O.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:O.png
+
+#begin X.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:X.png
+
+#begin TicTacToeBoard.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:TicTacToeBoard.png
+

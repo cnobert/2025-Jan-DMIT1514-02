@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/O.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/bin/DesktopGL/Content/O.xnb","TextureProcessor","Texture2DContent",4684,10085,0.218073
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/TicTacToeBoard.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/bin/DesktopGL/Content/TicTacToeBoard.xnb","TextureProcessor","Texture2DContent",3376,115685,0.013998
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/X.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson06_tictactoe01_mouse_input/Content/bin/DesktopGL/Content/X.xnb","TextureProcessor","Texture2DContent",4716,10085,0.009706
