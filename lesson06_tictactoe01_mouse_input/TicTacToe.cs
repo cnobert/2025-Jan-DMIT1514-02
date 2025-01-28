@@ -12,6 +12,8 @@ public class TicTacToe : Game
 
     private Texture2D _gameBoard, _xImage, _oImage;
     private MouseState _currentMouseState, _previousMouseState;
+
+    
     public TicTacToe()
     {
         _graphics = new GraphicsDeviceManager(this);
