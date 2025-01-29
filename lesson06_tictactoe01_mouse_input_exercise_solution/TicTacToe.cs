@@ -59,24 +59,22 @@ public class TicTacToe : Game
             //declare a data member that will remember the next token to be played
             //change Draw() so that it draws the next token to be played
             //when this "if" statement is entered, change the next token to be played
-            if(_nextTokenToBePlayed == "x")
+            if(_nextTokenToBePlayed == GameSpaceState.X)
             {
-                _nextTokenToBePlayed = "o";
+                _nextTokenToBePlayed = GameSpaceState.O;
             }
             else
             {
-                _nextTokenToBePlayed = "x";
+                _nextTokenToBePlayed = GameSpaceState.X;
             }
         }
-
-
         _previousMouseState = _currentMouseState;
         base.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(Color.LightSalmon);
 
         _spriteBatch.Begin();
 
@@ -88,7 +86,7 @@ public class TicTacToe : Game
         Vector2 adjustedMousePosition =
             _currentMouseState.Position.ToVector2() - _xImage.Bounds.Center.ToVector2();
 
-        if(_nextTokenToBePlayed == "x")
+        if(_nextTokenToBePlayed == GameSpaceState.X)
         {
             _spriteBatch.Draw(_xImage, adjustedMousePosition, Color.White);
         }

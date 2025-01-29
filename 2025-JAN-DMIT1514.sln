@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson06_tictactoe01_exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson06_tictactoe01_mouse_input_exercise_solution", "lesson06_tictactoe01_mouse_input_exercise_solution\lesson06_tictactoe01_mouse_input_exercise_solution.csproj", "{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson07_2D_arrays", "lesson07_2D_arrays\lesson07_2D_arrays.csproj", "{6FB82D6E-3C59-42B7-9DC9-BB87DD9AF2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,5 +66,9 @@ Global
 		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB82D6E-3C59-42B7-9DC9-BB87DD9AF2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB82D6E-3C59-42B7-9DC9-BB87DD9AF2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB82D6E-3C59-42B7-9DC9-BB87DD9AF2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB82D6E-3C59-42B7-9DC9-BB87DD9AF2F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
