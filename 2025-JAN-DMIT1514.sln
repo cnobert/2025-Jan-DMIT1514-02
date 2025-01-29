@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson05_keyboard_input", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson06_tictactoe01_mouse_input", "lesson06_tictactoe01_mouse_input\lesson06_tictactoe01_mouse_input.csproj", "{6ACF06D1-23B9-4210-8351-3B0FFBF4ED2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson06_tictactoe01_exercise_solution", "lesson06_tictactoe01_exercise_solution\lesson06_tictactoe01_exercise_solution.csproj", "{200E8898-CDD3-4BE9-B3A0-C743EB5514D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson06_tictactoe01_mouse_input_exercise_solution", "lesson06_tictactoe01_mouse_input_exercise_solution\lesson06_tictactoe01_mouse_input_exercise_solution.csproj", "{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,17 @@ Global
 		{6ACF06D1-23B9-4210-8351-3B0FFBF4ED2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACF06D1-23B9-4210-8351-3B0FFBF4ED2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACF06D1-23B9-4210-8351-3B0FFBF4ED2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F3DE62-0C23-4417-B62D-35E9ECF01A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F3DE62-0C23-4417-B62D-35E9ECF01A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F3DE62-0C23-4417-B62D-35E9ECF01A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F3DE62-0C23-4417-B62D-35E9ECF01A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200E8898-CDD3-4BE9-B3A0-C743EB5514D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200E8898-CDD3-4BE9-B3A0-C743EB5514D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200E8898-CDD3-4BE9-B3A0-C743EB5514D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200E8898-CDD3-4BE9-B3A0-C743EB5514D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA10EA02-1BDF-4ED4-A61E-865B2AC39D31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
