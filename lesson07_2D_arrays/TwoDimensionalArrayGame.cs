@@ -10,6 +10,20 @@ public class TwoDimensionalArrayGame : Game
     private SpriteBatch _spriteBatch;
     private SpriteFont _arialFont;
     private string _message = "the message";
+
+    public enum GameSpaceState
+    {
+        X, O, Empty
+    }
+    //using your coding toolkit from CPSC1012 combined with enums, the code below
+    //is the most scalable and efficient code data structure that you can create
+    //however, the end goal is a 2D array (an array of arrays)
+    //Next class, we will set this up.
+    private GameSpaceState[] _rowTop;
+    private GameSpaceState[] _rowMiddle;
+    private GameSpaceState[] _rowBottom;
+    
+
     public TwoDimensionalArrayGame()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -41,7 +55,37 @@ public class TwoDimensionalArrayGame : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         _spriteBatch.Begin();
-        _spriteBatch.DrawString(_arialFont, _message, Vector2.Zero, Color.White);
+
+        //playing around with arrays
+
+        int[] myNumbers = new int[10];
+        for(int c = 0; c < 10; c++)
+        {
+            myNumbers[c] = c + 3;
+        }
+
+        // for(int c = 0; c < 10; c++)
+        // {
+        //     _spriteBatch.DrawString(_arialFont, myNumbers[c] + "", new Vector2(c * 30, 0), Color.White);
+        // }
+        // int xLocation = 0;
+        // for(int c = myNumbers.Length - 1; c >= 0; c--)
+        // {
+        //     _spriteBatch.DrawString(_arialFont, myNumbers[c] + "", new Vector2(xLocation++ * 30, 0), Color.White);
+        // }
+
+        int[,] numArray = 
+        {
+            {1, 2, 3, 4 },
+            {5, 6, 7, 8 },
+            {9, 10, 11, 12 }
+        };
+        //in a 2D array, the first index is the rows, the second is the columns
+        //so, to output the number "6", we use row index 1 and column index 1
+        _spriteBatch.DrawString(_arialFont, numArray[1, 1] + "", Vector2.Zero, Color.White);
+
+        //Exercise: with different DrawString calls, output the number 12, then 8, then 1
+
         _spriteBatch.End();
 
         base.Draw(gameTime);
