@@ -13,8 +13,6 @@ public class TicTacToe : Game
     private Texture2D _gameBoard, _xImage, _oImage;
     private MouseState _currentMouseState, _previousMouseState;
 
-    //enums are a way to create constants that have restricted value space 
-    //(an enum can only be assigned the values that we choose)
     public enum GameSpaceState
     {
         X,
@@ -56,9 +54,6 @@ public class TicTacToe : Game
             && _currentMouseState.LeftButton == ButtonState.Released
         )
         {
-            //declare a data member that will remember the next token to be played
-            //change Draw() so that it draws the next token to be played
-            //when this "if" statement is entered, change the next token to be played
             if(_nextTokenToBePlayed == GameSpaceState.X)
             {
                 _nextTokenToBePlayed = GameSpaceState.O;
@@ -79,10 +74,7 @@ public class TicTacToe : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_gameBoard, Vector2.Zero, Color.White);
-        // Vector2 adjustedMousePosition = new Vector2(
-        //         _currentMouseState.Position.X - (_xImage.Width / 2),
-        //         _currentMouseState.Position.Y - (_xImage.Height / 2)
-        // );
+
         Vector2 adjustedMousePosition =
             _currentMouseState.Position.ToVector2() - _xImage.Bounds.Center.ToVector2();
 
