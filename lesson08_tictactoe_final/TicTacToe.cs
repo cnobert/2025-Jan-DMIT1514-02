@@ -10,7 +10,7 @@ public class TicTacToe : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    private Texture2D _gameBoard, _xImage, _oImage;
+    private Texture2D _gameBoardImage, _xImage, _oImage;
     private MouseState _currentMouseState, _previousMouseState;
 
     public enum GameSpaceState
@@ -19,6 +19,14 @@ public class TicTacToe : Game
     }
     private GameSpaceState _nextTokenToBePlayed = GameSpaceState.X;
     
+    private GameSpaceState[,] _gameBoard = 
+        new GameSpaceState[,]
+        {
+            {GameSpaceState.Empty, GameSpaceState.Empty, GameSpaceState.Empty},//row 0
+            {GameSpaceState.X, GameSpaceState.X, GameSpaceState.Empty},//row 1
+            {GameSpaceState.Empty, GameSpaceState.Empty, GameSpaceState.X} //row 2
+        };
+
     public enum GameState
     {
         Initialize, WaitForPlayerMove, MakePlayerMove,
@@ -46,7 +54,7 @@ public class TicTacToe : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _gameBoard = Content.Load<Texture2D>("TicTacToeBoard");
+        _gameBoardImage = Content.Load<Texture2D>("TicTacToeBoard");
         _xImage = Content.Load<Texture2D>("X");
         _oImage = Content.Load<Texture2D>("O");
     }
@@ -105,7 +113,7 @@ public class TicTacToe : Game
 
         _spriteBatch.Begin();
 
-        _spriteBatch.Draw(_gameBoard, Vector2.Zero, Color.White);
+        _spriteBatch.Draw(_gameBoardImage, Vector2.Zero, Color.White);
 
         switch(_currentGameState)
         {
@@ -131,6 +139,16 @@ public class TicTacToe : Game
                 break;
         }
 
+        for(int row = 0; row < _gameBoard.GetLength(0); row++)
+        {
+            for(int column = 0; column < _gameBoard.GetLength(1); column++)
+            {
+                if(_gameBoard[row, column] == GameSpaceState.X)
+                {
+                    _spriteBatch.Draw(_xImage, new Vector2(column * _xImage.Width, row * _xImage.Height), Color.White);
+                }
+            }
+        }
         
         _spriteBatch.End();
         base.Draw(gameTime);
