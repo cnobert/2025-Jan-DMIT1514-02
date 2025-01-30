@@ -112,6 +112,16 @@ public class TicTacToe : Game
             case GameState.Initialize:
                 break;
             case GameState.WaitForPlayerMove:
+                Vector2 adjustedMousePosition =
+                    _currentMouseState.Position.ToVector2() - _xImage.Bounds.Center.ToVector2();
+                if(_nextTokenToBePlayed == GameSpaceState.X)
+                {
+                    _spriteBatch.Draw(_xImage, adjustedMousePosition, Color.White);
+                }
+                else
+                {
+                    _spriteBatch.Draw(_oImage, adjustedMousePosition, Color.White);
+                }
                 break;
             case GameState.MakePlayerMove:
                 break;
@@ -121,17 +131,7 @@ public class TicTacToe : Game
                 break;
         }
 
-        Vector2 adjustedMousePosition =
-            _currentMouseState.Position.ToVector2() - _xImage.Bounds.Center.ToVector2();
-
-        if(_nextTokenToBePlayed == GameSpaceState.X)
-        {
-            _spriteBatch.Draw(_xImage, adjustedMousePosition, Color.White);
-        }
-        else
-        {
-            _spriteBatch.Draw(_oImage, adjustedMousePosition, Color.White);
-        }
+        
         _spriteBatch.End();
         base.Draw(gameTime);
     }
