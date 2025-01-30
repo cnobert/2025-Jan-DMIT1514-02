@@ -15,11 +15,17 @@ public class TicTacToe : Game
 
     public enum GameSpaceState
     {
-        X,
-        O
+        X, O, Empty
     }
     private GameSpaceState _nextTokenToBePlayed = GameSpaceState.X;
     
+    public enum GameState
+    {
+        Initialize, WaitForPlayerMove, MakePlayerMove,
+        EvaluatePlayerMove, GameOver
+    }
+    private GameState _currentGameState = GameState.Initialize;
+
     public TicTacToe()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -49,20 +55,46 @@ public class TicTacToe : Game
     {
         _currentMouseState = Mouse.GetState();
 
-        //detect a "mouse up" event
-        if(_previousMouseState.LeftButton == ButtonState.Pressed
-            && _currentMouseState.LeftButton == ButtonState.Released
-        )
+        switch(_currentGameState)
         {
-            if(_nextTokenToBePlayed == GameSpaceState.X)
-            {
-                _nextTokenToBePlayed = GameSpaceState.O;
-            }
-            else
-            {
+            case GameState.Initialize:
                 _nextTokenToBePlayed = GameSpaceState.X;
-            }
+                //TODO: set all game board spaces to empty
+                _currentGameState = GameState.WaitForPlayerMove;
+                break;
+            case GameState.WaitForPlayerMove:
+                //"mouse up" event
+                if(_previousMouseState.LeftButton == ButtonState.Pressed
+                    && _currentMouseState.LeftButton == ButtonState.Released
+                )
+                {
+                    //todo: check if this move is valid
+                    //if this is a valid move:
+                    _currentGameState = GameState.MakePlayerMove;
+                }
+                break;
+            case GameState.MakePlayerMove:
+                //todo: place the token in the game space
+                _currentGameState = GameState.EvaluatePlayerMove;
+                break;
+            case GameState.EvaluatePlayerMove:
+                //todo: determine if there is a winner
+                //was there a winner? if so, move to gameover
+                //otherwise, change nextTokenToBePlayed
+                if(_nextTokenToBePlayed == GameSpaceState.X)
+                {
+                    _nextTokenToBePlayed = GameSpaceState.O;
+                }
+                else
+                {
+                    _nextTokenToBePlayed = GameSpaceState.X;
+                }
+                _currentGameState = GameState.WaitForPlayerMove;
+                break;
+            case GameState.GameOver:
+                break;
         }
+        
         _previousMouseState = _currentMouseState;
         base.Update(gameTime);
     }
@@ -74,6 +106,20 @@ public class TicTacToe : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_gameBoard, Vector2.Zero, Color.White);
+
+        switch(_currentGameState)
+        {
+            case GameState.Initialize:
+                break;
+            case GameState.WaitForPlayerMove:
+                break;
+            case GameState.MakePlayerMove:
+                break;
+            case GameState.EvaluatePlayerMove:
+                break;
+            case GameState.GameOver:
+                break;
+        }
 
         Vector2 adjustedMousePosition =
             _currentMouseState.Position.ToVector2() - _xImage.Bounds.Center.ToVector2();
