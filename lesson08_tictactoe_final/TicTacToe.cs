@@ -23,7 +23,7 @@ public class TicTacToe : Game
         new GameSpaceState[,]
         {
             {GameSpaceState.Empty, GameSpaceState.Empty, GameSpaceState.Empty},//row 0
-            {GameSpaceState.X, GameSpaceState.X, GameSpaceState.Empty},//row 1
+            {GameSpaceState.X, GameSpaceState.O, GameSpaceState.Empty},//row 1
             {GameSpaceState.Empty, GameSpaceState.Empty, GameSpaceState.X} //row 2
         };
 
@@ -34,11 +34,12 @@ public class TicTacToe : Game
     }
     private GameState _currentGameState = GameState.Initialize;
 
+#region  setup methods
     public TicTacToe()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
-        IsMouseVisible = true;
+        IsMouseVisible = false;
     }
 
     protected override void Initialize()
@@ -58,7 +59,7 @@ public class TicTacToe : Game
         _xImage = Content.Load<Texture2D>("X");
         _oImage = Content.Load<Texture2D>("O");
     }
-
+#endregion
     protected override void Update(GameTime gameTime)
     {
         _currentMouseState = Mouse.GetState();
@@ -68,6 +69,15 @@ public class TicTacToe : Game
             case GameState.Initialize:
                 _nextTokenToBePlayed = GameSpaceState.X;
                 //TODO: set all game board spaces to empty
+                //Exercise: write a nested for loop that sets all game board spaces to "empty"
+                // for(int row = 0; row < _gameBoard.GetLength(0); row++)
+                // {
+                //     for(int column = 0; column < _gameBoard.GetLength(1); column++)
+                //     {
+                //         _gameBoard[row, column] = GameSpaceState.Empty;
+                //     }
+                // }
+
                 _currentGameState = GameState.WaitForPlayerMove;
                 break;
             case GameState.WaitForPlayerMove:
@@ -77,18 +87,31 @@ public class TicTacToe : Game
                 )
                 {
                     //todo: check if this move is valid
+                    int x = _currentMouseState.X;
+                    int y = _currentMouseState.Y;
+
+                    int correspondingGameBoardRow = y / _xImage.Height;
+                    int correspondingGameBoardColumn = x / _oImage.Width;
+
+                    //now, we can use the above two variables to access _gameBoard
+                    //and see if the move is valid
+                    //if the move is invalid, do nothing
+
                     //if this is a valid move:
                     _currentGameState = GameState.MakePlayerMove;
                 }
                 break;
             case GameState.MakePlayerMove:
-                //todo: place the token in the game space
+                //todo: using the technique from above, 
+                //convert from the clicked-on pixels to the 2D array
+                //and place the token in the game space (in _gameBoard)
+
                 _currentGameState = GameState.EvaluatePlayerMove;
                 break;
             case GameState.EvaluatePlayerMove:
                 //todo: determine if there is a winner
-                //was there a winner? if so, move to gameover
-                //otherwise, change nextTokenToBePlayed
+                //was there a winner? if so, set IsMouseVisible to true, and move to GameOver
+                //else, change nextTokenToBePlayed and then go to WaitForPlayerMove
                 if(_nextTokenToBePlayed == GameSpaceState.X)
                 {
                     _nextTokenToBePlayed = GameSpaceState.O;
@@ -100,6 +123,7 @@ public class TicTacToe : Game
                 _currentGameState = GameState.WaitForPlayerMove;
                 break;
             case GameState.GameOver:
+                //wait for a click anywhere, and then change _currentGameState to Initialize
                 break;
         }
         
@@ -115,6 +139,7 @@ public class TicTacToe : Game
 
         _spriteBatch.Draw(_gameBoardImage, Vector2.Zero, Color.White);
 
+        this.DrawCurrentGameBoard();
         switch(_currentGameState)
         {
             case GameState.Initialize:
@@ -136,9 +161,22 @@ public class TicTacToe : Game
             case GameState.EvaluatePlayerMove:
                 break;
             case GameState.GameOver:
+            //todo:
+            //1. draw the "game over" background (you will find this asset and import it
+            //2. out the "X has won, click anywhere to play again" message
+            //3. for 10/10 marks, somehow make the winning line visible
                 break;
         }
 
+        
+        _spriteBatch.End();
+        base.Draw(gameTime);
+    }
+    private void DrawCurrentGameBoard()
+    {
+        //todo: 
+        //1. make it draw "O" tokens as well
+        //2. make it take into account line widths when drawing
         for(int row = 0; row < _gameBoard.GetLength(0); row++)
         {
             for(int column = 0; column < _gameBoard.GetLength(1); column++)
@@ -149,8 +187,5 @@ public class TicTacToe : Game
                 }
             }
         }
-        
-        _spriteBatch.End();
-        base.Draw(gameTime);
     }
 }
