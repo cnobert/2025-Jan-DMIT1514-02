@@ -7,6 +7,7 @@ namespace lesson09_pong_begin;
 public class Pong : Game
 {
     private const int _WindowWidth = 250, _WindowHeight = 150, _BallWidthAndHeight = 7;
+    private const int _PlayAreaEdgeLineWidth = 4;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private Texture2D _backgroundTexture, _ballTexture;
@@ -32,7 +33,7 @@ public class Pong : Game
         _ballPosition.X = 50;
         _ballPosition.Y = 65;
 
-        _ballSpeed = 200;
+        _ballSpeed = 20;
         _ballDirection.X = -1;
         _ballDirection.Y = -1;
 
@@ -60,8 +61,9 @@ public class Pong : Game
             _ballDirection.X *= -1;
         }
         //bounce ball of top and bottom
-        if(_ballPosition.Y <= _playAreaBoundingBox.Top || 
-            (_ballPosition.Y + _BallWidthAndHeight) >= _playAreaBoundingBox.Bottom)
+        if  (_ballPosition.Y <= (_playAreaBoundingBox.Top + _PlayAreaEdgeLineWidth) || 
+                (_ballPosition.Y + _BallWidthAndHeight) >= (_playAreaBoundingBox.Bottom - _PlayAreaEdgeLineWidth)
+            )
         {
             _ballDirection.Y *= -1;
         }
