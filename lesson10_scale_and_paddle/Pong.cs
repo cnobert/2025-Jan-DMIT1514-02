@@ -6,19 +6,24 @@ namespace lesson10_scale_and_paddle;
 
 public class Pong : Game
 {
-    private const int _Scale = 5;
+    private const int _Scale = 3;
     private const int _WindowWidth = 250 * _Scale, _WindowHeight = 150 * _Scale;
-    private const int _BallWidthAndHeight = 7 * _Scale, _BallSpeed = 175 * _Scale;
     private const int _PlayAreaEdgeLineWidth = 4 * _Scale;
+
+    private const int _BallWidthAndHeight = 7 * _Scale, _BallSpeed = 175 * _Scale;
+    private const int _PaddleHeight = 18 * _Scale, _PaddleWidth = 2 * _Scale, _PaddleSpeed = 200 * _Scale;
     
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private Texture2D _backgroundTexture, _ballTexture;
+    private Texture2D _backgroundTexture, _ballTexture, _paddleTexture;
 
     private Rectangle _playAreaBoundingBox;
 
     private Vector2 _ballPosition, _ballDirection;
     private float _ballSpeed;
+
+    private Vector2 _paddlePosition, _paddleDirection, _paddleDimensions;
+    private float _paddleSpeed;
 
     public Pong()
     {
@@ -33,15 +38,13 @@ public class Pong : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
 
-        //initial ball position
-        _ballPosition.X = 50;
-        _ballPosition.Y = 65;
-
+        _ballPosition = new Vector2(50 * _Scale, 65 * _Scale);
+        _ballDirection = new Vector2(-1, -1);
         _ballSpeed = _BallSpeed;
         
-        //initial ball direction
-        _ballDirection.X = -1;
-        _ballDirection.Y = -1;
+        _paddlePosition = new Vector2(215 * _Scale, 75 * _Scale);
+        _paddleSpeed = _PaddleSpeed;
+        _paddleDimensions = new Vector2(_PaddleWidth, _PaddleHeight);
 
         _playAreaBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
 
@@ -53,6 +56,7 @@ public class Pong : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         _backgroundTexture = Content.Load<Texture2D>("Court");
         _ballTexture = Content.Load<Texture2D>("Ball");
+        _paddleTexture = Content.Load<Texture2D>("Paddle");
     }
 
     protected override void Update(GameTime gameTime)
@@ -86,6 +90,7 @@ public class Pong : Game
         //params: texture to draw, position, sourceRectangle, color, rotation, origin, SCALE, SpriteEffects, layer depth
         _spriteBatch.Draw(_ballTexture, _ballPosition, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
 
+        _spriteBatch.Draw(_paddleTexture, _paddlePosition, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
         _spriteBatch.End();
         base.Draw(gameTime);
     }
