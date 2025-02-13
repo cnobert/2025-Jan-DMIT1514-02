@@ -17,6 +17,9 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
 </ItemGroup>
+<ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+</ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico">
       <LogicalName>Icon.ico</LogicalName>

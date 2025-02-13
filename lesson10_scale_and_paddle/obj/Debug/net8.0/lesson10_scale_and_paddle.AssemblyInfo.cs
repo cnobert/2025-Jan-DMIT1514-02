@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson10_scale_and_paddle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9435e132530b40cd7b4dcb364aa876aeec0a49eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e32adfe54e2ae275e7255c933c517c0b15b962de")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson10_scale_and_paddle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson10_scale_and_paddle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
