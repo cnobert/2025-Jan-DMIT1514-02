@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson11_Ball_class")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e32adfe54e2ae275e7255c933c517c0b15b962de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce8ed4806ea08741fcadb8f4cd48247a6c6c238e")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson11_Ball_class")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson11_Ball_class")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

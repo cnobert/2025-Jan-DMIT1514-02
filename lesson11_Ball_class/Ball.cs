@@ -21,6 +21,7 @@ public class Ball
         _gameScale = gameScale;
         _speed = _Speed * _gameScale;
         _dimensions = new Vector2(_WidthAndHeight) * _gameScale;
+        _playAreaBoundingBox = playAreaBoundingBox;
     }
     internal void LoadContent(ContentManager content)
     {
@@ -43,6 +44,12 @@ public class Ball
         {
             _direction.Y *= -1;
         }
+    }
+
+    internal void Draw(SpriteBatch spriteBatch)
+    {
+        spriteBatch.Draw(_texture, _position, null, Color.White, 0, Vector2.Zero, _gameScale, SpriteEffects.None, 0f);
+
     }
 
 }

@@ -36,15 +36,15 @@ public class Pong : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
 
-                        //initial position, initial direction, scale, game play area
-        _ball.Initialize(new Vector2(50, 65),  new Vector2(-1, -1), _Scale, _playAreaBoundingBox);
-        
         _paddlePosition = new Vector2(215 * _Scale, 75 * _Scale);
         _paddleSpeed = _PaddleSpeed;
         _paddleDimensions = new Vector2(_PaddleWidth, _PaddleHeight);
 
         _playAreaBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
-
+        
+        _ball = new Ball();
+        _ball.Initialize(new Vector2(50, 65),  new Vector2(-1, -1), _Scale, _playAreaBoundingBox);
+        
         base.Initialize();
     }
 
@@ -63,21 +63,6 @@ public class Pong : Game
         
         _ball.Update(gameTime);
         
-        _ballPosition += _ballDirection * _ballSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-        //bounce ball off left and right sides
-        if(_ballPosition.X <= _playAreaBoundingBox.Left || (_ballPosition.X + _BallWidthAndHeight) >= _playAreaBoundingBox.Right)
-        {
-            _ballDirection.X *= -1;
-        }
-        //bounce ball of top and bottom
-        if  (_ballPosition.Y <= (_playAreaBoundingBox.Top + _PlayAreaEdgeLineWidth) || 
-                (_ballPosition.Y + _BallWidthAndHeight) >= (_playAreaBoundingBox.Bottom - _PlayAreaEdgeLineWidth)
-            )
-        {
-            _ballDirection.Y *= -1;
-        }
-
         KeyboardState kbState = Keyboard.GetState();
 
         if(kbState.IsKeyDown(Keys.W))
@@ -114,8 +99,7 @@ public class Pong : Game
         
         _spriteBatch.Draw(_backgroundTexture, Vector2.Zero, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
 
-        //params: texture to draw, position, sourceRectangle, color, rotation, origin, SCALE, SpriteEffects, layer depth
-        _spriteBatch.Draw(_ballTexture, _ballPosition, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
+        _ball.Draw(_spriteBatch);
 
         _spriteBatch.Draw(_paddleTexture, _paddlePosition, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
         _spriteBatch.End();
