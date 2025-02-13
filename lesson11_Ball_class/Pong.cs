@@ -10,17 +10,15 @@ public class Pong : Game
     private const int _WindowWidth = 250 * _Scale, _WindowHeight = 150 * _Scale;
     private const int _PlayAreaEdgeLineWidth = 4 * _Scale;
 
-    private const int _BallWidthAndHeight = 7 * _Scale, _BallSpeed = 175 * _Scale;
-    private const int _PaddleHeight = 18 * _Scale, _PaddleWidth = 2 * _Scale, _PaddleSpeed = 20 * _Scale;
+    private const int _PaddleHeight = 18 * _Scale, _PaddleWidth = 2 * _Scale;
+    private const int _PaddleSpeed = 20 * _Scale;
     
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private Texture2D _backgroundTexture, _ballTexture, _paddleTexture;
-
+    private Texture2D _backgroundTexture, _paddleTexture;
     private Rectangle _playAreaBoundingBox;
 
-    private Vector2 _ballPosition, _ballDirection;
-    private float _ballSpeed;
+    private Ball _ball;
 
     private Vector2 _paddlePosition, _paddleDirection, _paddleDimensions;
     private float _paddleSpeed;
@@ -38,9 +36,8 @@ public class Pong : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
 
-        _ballPosition = new Vector2(50 * _Scale, 65 * _Scale);
-        _ballDirection = new Vector2(-1, -1);
-        _ballSpeed = _BallSpeed;
+                        //initial position, initial direction, scale, game play area
+        _ball.Initialize(new Vector2(50, 65),  new Vector2(-1, -1), _Scale, _playAreaBoundingBox);
         
         _paddlePosition = new Vector2(215 * _Scale, 75 * _Scale);
         _paddleSpeed = _PaddleSpeed;
@@ -55,12 +52,17 @@ public class Pong : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         _backgroundTexture = Content.Load<Texture2D>("Court");
-        _ballTexture = Content.Load<Texture2D>("Ball");
+        
+        _ball.LoadContent(Content);
+
         _paddleTexture = Content.Load<Texture2D>("Paddle");
     }
 
     protected override void Update(GameTime gameTime)
     {
+        
+        _ball.Update(gameTime);
+        
         _ballPosition += _ballDirection * _ballSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
 
         //bounce ball off left and right sides

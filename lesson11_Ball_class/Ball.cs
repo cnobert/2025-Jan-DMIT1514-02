@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -19,7 +20,29 @@ public class Ball
         _direction = initialDirection;
         _gameScale = gameScale;
         _speed = _Speed * _gameScale;
-        _dimen
+        _dimensions = new Vector2(_WidthAndHeight) * _gameScale;
+    }
+    internal void LoadContent(ContentManager content)
+    {
+        _texture = content.Load<Texture2D>("Ball");
+    }
+
+    internal void Update(GameTime gameTime)
+    {
+        _position += _direction * _speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+        //bounce ball off left and right sides
+        if(_position.X <= _playAreaBoundingBox.Left || (_position.X + _dimensions.X) >= _playAreaBoundingBox.Right)
+        {
+            _direction.X *= -1;
+        }
+        //bounce ball of top and bottom
+        if  (_position.Y <= (_playAreaBoundingBox.Top) || 
+                (_position.Y + _dimensions.Y) >= (_playAreaBoundingBox.Bottom)
+            )
+        {
+            _direction.Y *= -1;
+        }
     }
 
 }
