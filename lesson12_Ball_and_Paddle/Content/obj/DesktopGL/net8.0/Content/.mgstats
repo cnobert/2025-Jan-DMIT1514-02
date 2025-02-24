@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/Ball.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/bin/DesktopGL/Content/Ball.xnb","TextureProcessor","Texture2DContent",2856,281,0.00743
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/Court.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/bin/DesktopGL/Content/Court.xnb","TextureProcessor","Texture2DContent",3584,150085,0.21144
+"/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/Paddle.png","/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson12_Ball_and_Paddle/Content/bin/DesktopGL/Content/Paddle.xnb","TextureProcessor","Texture2DContent",2803,229,0.001128

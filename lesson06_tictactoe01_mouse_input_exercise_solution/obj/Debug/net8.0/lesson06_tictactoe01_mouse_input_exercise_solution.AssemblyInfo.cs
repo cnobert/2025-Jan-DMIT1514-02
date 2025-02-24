@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson06_tictactoe01_mouse_input_exercise_solution")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e32adfe54e2ae275e7255c933c517c0b15b962de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+788f67697a1b3f7190637ecc4a3ba44700090c38")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson06_tictactoe01_mouse_input_exercise_solution")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson06_tictactoe01_mouse_input_exercise_solution")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

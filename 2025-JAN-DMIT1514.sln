@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson10_scale_and_paddle",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson11_Ball_class", "lesson11_Ball_class\lesson11_Ball_class.csproj", "{A94A3DF9-F302-414F-AF17-BB12AA9EC6B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson12_Ball_and_Paddle", "lesson12_Ball_and_Paddle\lesson12_Ball_and_Paddle.csproj", "{BA3A7BF1-2B17-4419-A726-70DA4259800E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,5 +94,9 @@ Global
 		{A94A3DF9-F302-414F-AF17-BB12AA9EC6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A94A3DF9-F302-414F-AF17-BB12AA9EC6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A94A3DF9-F302-414F-AF17-BB12AA9EC6B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3A7BF1-2B17-4419-A726-70DA4259800E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3A7BF1-2B17-4419-A726-70DA4259800E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3A7BF1-2B17-4419-A726-70DA4259800E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3A7BF1-2B17-4419-A726-70DA4259800E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
