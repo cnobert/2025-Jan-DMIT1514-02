@@ -9,20 +9,13 @@ public class Pong : Game
     private const int _Scale = 3;
     private const int _WindowWidth = 250 * _Scale, _WindowHeight = 150 * _Scale;
     private const int _PlayAreaEdgeLineWidth = 4 * _Scale;
-
-    private const int _PaddleHeight = 18 * _Scale, _PaddleWidth = 2 * _Scale;
-    private const int _PaddleSpeed = 20 * _Scale;
     
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private Texture2D _backgroundTexture, _paddleTexture;
+    private Texture2D _backgroundTexture;
     private Rectangle _playAreaBoundingBox;
-
     private Ball _ball;
-
-    private Vector2 _paddlePosition, _paddleDirection, _paddleDimensions;
-    private float _paddleSpeed;
-
+    private Paddle _paddle;
     public Pong()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -36,15 +29,13 @@ public class Pong : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
 
-        _paddlePosition = new Vector2(215 * _Scale, 75 * _Scale);
-        _paddleSpeed = _PaddleSpeed;
-        _paddleDimensions = new Vector2(_PaddleWidth, _PaddleHeight);
-
         _playAreaBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         
         _ball = new Ball();
         _ball.Initialize(new Vector2(50, 65),  new Vector2(-1, -1), _Scale, _playAreaBoundingBox);
-        
+        _paddle = new Paddle();
+        _paddle.Initialize(new Vector2(210, 75), _Scale, _playAreaBoundingBox);
+
         base.Initialize();
     }
 
@@ -54,41 +45,30 @@ public class Pong : Game
         _backgroundTexture = Content.Load<Texture2D>("Court");
         
         _ball.LoadContent(Content);
-
-        _paddleTexture = Content.Load<Texture2D>("Paddle");
+        _paddle.LoadContent(Content);
     }
 
     protected override void Update(GameTime gameTime)
     {
-        
         _ball.Update(gameTime);
         
+        #region keybard input
         KeyboardState kbState = Keyboard.GetState();
-
         if(kbState.IsKeyDown(Keys.W))
         {
-            _paddleDirection = new Vector2(0, -1);
+            _paddle.Direction = new Vector2(0, -1);
         }
         else if(kbState.IsKeyDown(Keys.S))
         {
-            _paddleDirection = new Vector2(0, 1);
+            _paddle.Direction = new Vector2(0, 1);
         }
         else //come to a stop if neither key is being pressed
         {
-            _paddleDirection = new Vector2(0, 0);
+            _paddle.Direction = new Vector2(0, 0);
         }
-        _paddlePosition += _paddleDirection * _paddleSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-        //if they are at the top of the screen, the paddle is now one pixel too high
-        //so, "pin" the paddle at exactly the top of the screen
-        if(_paddlePosition.Y <= _playAreaBoundingBox.Top)
-        {
-            _paddlePosition.Y = _playAreaBoundingBox.Top;
-        }
-        else if((_paddlePosition.Y + _paddleDimensions.Y) >= _playAreaBoundingBox.Bottom) 
-        {
-            _paddlePosition.Y = _playAreaBoundingBox.Bottom - _paddleDimensions.Y;
-        }
+        #endregion
+        
+        _paddle.Update(gameTime);
         base.Update(gameTime);
     }
 
@@ -100,8 +80,7 @@ public class Pong : Game
         _spriteBatch.Draw(_backgroundTexture, Vector2.Zero, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
 
         _ball.Draw(_spriteBatch);
-
-        _spriteBatch.Draw(_paddleTexture, _paddlePosition, null, Color.White, 0, Vector2.Zero, _Scale, SpriteEffects.None, 0f);
+        _paddle.Draw(_spriteBatch);
         _spriteBatch.End();
         base.Draw(gameTime);
     }
