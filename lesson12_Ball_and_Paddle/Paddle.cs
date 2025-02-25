@@ -48,6 +48,6 @@ public class Paddle
     }
     internal void Draw(SpriteBatch spriteBatch)
     {
-        spriteBatch.Draw(_texture, _position, null, Color.White, 0, Vector2.Zero, _gameScale, SpriteEffects.None, 0f);
+        spriteBatch.Draw(_texture, _position, null, Color.Orange, 0, Vector2.Zero, _gameScale, SpriteEffects.None, 0f);
     }
 }

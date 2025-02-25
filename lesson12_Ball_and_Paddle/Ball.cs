@@ -7,7 +7,7 @@ namespace lesson12_Ball_and_Paddle;
 
 public class Ball
 {
-    private const int _WidthAndHeight = 7, _Speed = 175;
+    private const int _WidthAndHeight = 7, _Speed = 17;
     private Texture2D _texture;
     private Vector2 _position, _direction, _dimensions;
     private float _speed;
@@ -48,7 +48,7 @@ public class Ball
 
     internal void Draw(SpriteBatch spriteBatch)
     {
-        spriteBatch.Draw(_texture, _position, null, Color.White, 0, Vector2.Zero, _gameScale, SpriteEffects.None, 0f);
+        spriteBatch.Draw(_texture, _position, null, Color.Red, 0, Vector2.Zero, _gameScale, SpriteEffects.None, 0f);
 
     }
 
