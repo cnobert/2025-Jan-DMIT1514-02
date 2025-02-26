@@ -28,3 +28,13 @@
 /processor:TextureProcessor
 /build:TicTacToeBoard.png
 
+#begin HUDBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:HUDBackground.png
+
+#begin SystemArialFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:SystemArialFont.spritefont
+

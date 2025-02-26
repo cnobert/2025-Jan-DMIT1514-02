@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson13_TicTacToe_HUD/Content/SystemArialFont.spritefont</SourceFile>
+  <SourceTime>2025-02-26T08:37:12.2107004-07:00</SourceTime>
+  <DestFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson13_TicTacToe_HUD/Content/bin/DesktopGL/Content/SystemArialFont.xnb</DestFile>
+  <DestTime>2025-02-26T08:44:10.6369631-07:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2024-08-16T11:05:56-06:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2024-08-16T11:05:56-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

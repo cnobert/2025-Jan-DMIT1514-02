@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,6 +14,9 @@ public class TicTacToe : Game
     private Texture2D _gameBoardImage, _xImage, _oImage;
     private MouseState _currentMouseState, _previousMouseState;
 
+    private HUD _hud; //this class should draw the HUD and store certain pieces of game state information
+
+#region data structures
     public enum GameSpaceState
     {
         X, O, Empty
@@ -33,7 +37,7 @@ public class TicTacToe : Game
         EvaluatePlayerMove, GameOver
     }
     private GameState _currentGameState = GameState.Initialize;
-
+#endregion
 #region  setup methods
     public TicTacToe()
     {
@@ -45,8 +49,12 @@ public class TicTacToe : Game
     protected override void Initialize()
     {
         _graphics.PreferredBackBufferWidth = _WindowWidth;
-        _graphics.PreferredBackBufferHeight = _WindowHeight;
+        _graphics.PreferredBackBufferHeight = _WindowHeight + HUD.Height;
         _graphics.ApplyChanges();
+
+        _hud = new HUD();
+        //pass the HUD it's position (where its top left corner begins)
+        _hud.Initialize(new Vector2(0, _WindowHeight));
 
         base.Initialize();
     }
@@ -58,6 +66,8 @@ public class TicTacToe : Game
         _gameBoardImage = Content.Load<Texture2D>("TicTacToeBoard");
         _xImage = Content.Load<Texture2D>("X");
         _oImage = Content.Load<Texture2D>("O");
+        
+        _hud.LoadContent(this.Content);
     }
 #endregion
     protected override void Update(GameTime gameTime)
@@ -115,15 +125,22 @@ public class TicTacToe : Game
                 if(_nextTokenToBePlayed == GameSpaceState.X)
                 {
                     _nextTokenToBePlayed = GameSpaceState.O;
+                    _hud.XTurnCount++;
                 }
                 else
                 {
                     _nextTokenToBePlayed = GameSpaceState.X;
+                    _hud.OTurnCount++;
                 }
                 _currentGameState = GameState.WaitForPlayerMove;
+
+                //if we detect a winner:
+                _hud.Message = "X wins, click anywhere to play again";
                 break;
             case GameState.GameOver:
                 //wait for a click anywhere, and then change _currentGameState to Initialize
+
+
                 break;
         }
         
@@ -138,6 +155,8 @@ public class TicTacToe : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_gameBoardImage, Vector2.Zero, Color.White);
+
+        _hud.Draw(_spriteBatch);
 
         this.DrawCurrentGameBoard();
         switch(_currentGameState)

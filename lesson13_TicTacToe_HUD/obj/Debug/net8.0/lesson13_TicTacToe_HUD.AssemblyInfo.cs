@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson13_TicTacToe_HUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+664c47b66eedea02a3d77ef7ffa4da582af2c4e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4378dedc987ed02cc4249054b32de8a30ed72f3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson13_TicTacToe_HUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson13_TicTacToe_HUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
