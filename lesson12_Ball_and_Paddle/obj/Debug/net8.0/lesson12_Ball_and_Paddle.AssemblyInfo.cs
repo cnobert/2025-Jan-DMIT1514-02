@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson12_Ball_and_Paddle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26c973a9987c1ab30d5872d749269132c667506a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6ed5f797675f089f940bb7b581173cc3663f119")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson12_Ball_and_Paddle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson12_Ball_and_Paddle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
