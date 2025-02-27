@@ -61,10 +61,12 @@ public class Ball
 
     }
     
-    internal void ProcessCollision(Rectangle otherBoundingBox)
+    internal bool ProcessCollision(Rectangle otherBoundingBox)
     {
+        bool didCollide = false;
         if(_collisionTimerMillis >= _CollisionTimerIntervalMillis && BoundingBox.Intersects(otherBoundingBox))
         {
+            didCollide = true;
             _collisionTimerMillis = 0;
             //collision!
             Rectangle intersection = Rectangle.Intersect(BoundingBox, otherBoundingBox);
@@ -79,5 +81,6 @@ public class Ball
                 _direction.X *= -1;
             }
         }
+        return didCollide;
     }
 }

@@ -68,10 +68,27 @@ public class Pong : Game
         }
         #endregion
         
+
         _ball.Update(gameTime);
         _paddle.Update(gameTime);
+        //_paddle01.Update(gameTime);
+        //_paddle02.Update(gameTime);
+        //_blocker.Update(gameTime);
 
-        _ball.ProcessCollision(_paddle.BoundingBox);
+        if(_ball.ProcessCollision(_paddle.BoundingBox))
+        {
+            ;
+        }
+        /*
+            if(_ball.ProcessCollision(_paddle01.BoundingBox))
+            {
+                _hud.Paddle01Score++;
+                _paddle01.Glow();
+            }
+
+        */
+        //_ball.ProcessCollision(_paddle01.BoundingBox);
+        //_ball.ProcessCollision(_paddle02.BoundingBox);
 
         base.Update(gameTime);
     }
