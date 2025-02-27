@@ -17,6 +17,14 @@ public class Paddle
     { 
         set => _direction = value; 
     }
+
+    internal Rectangle BoundingBox
+    {
+        get
+        {
+            return new Rectangle(_position.ToPoint(), _dimensions.ToPoint());
+        }
+    }
     internal void Initialize(Vector2 initialPosition, int gameScale, Rectangle playAreaBoundingBox)
     {
         _position = initialPosition * gameScale;

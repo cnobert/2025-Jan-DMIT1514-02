@@ -32,7 +32,7 @@ public class Pong : Game
         _playAreaBoundingBox = new Rectangle(0, _PlayAreaEdgeLineWidth, _WindowWidth, _WindowHeight - 2 * _PlayAreaEdgeLineWidth);
         
         _ball = new Ball();
-        _ball.Initialize(new Vector2(50, 65),  new Vector2(-1, -1), _Scale, _playAreaBoundingBox);
+        _ball.Initialize(new Vector2(150, 130),  new Vector2(1, -1), _Scale, _playAreaBoundingBox);
         _paddle = new Paddle();
         _paddle.Initialize(new Vector2(210, 75), _Scale, _playAreaBoundingBox);
 
@@ -50,7 +50,7 @@ public class Pong : Game
 
     protected override void Update(GameTime gameTime)
     {
-        _ball.Update(gameTime);
+        
         
         #region keybard input
         KeyboardState kbState = Keyboard.GetState();
@@ -68,7 +68,11 @@ public class Pong : Game
         }
         #endregion
         
+        _ball.Update(gameTime);
         _paddle.Update(gameTime);
+
+        _ball.ProcessCollision(_paddle.BoundingBox);
+
         base.Update(gameTime);
     }
 
