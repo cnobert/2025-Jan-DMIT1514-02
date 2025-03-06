@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson15_MosquitoAttack_Cannon/Content/Background.png</SourceFile>
+  <SourceTime>2025-03-06T11:05:32.8594756-07:00</SourceTime>
+  <DestFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson15_MosquitoAttack_Cannon/Content/bin/DesktopGL/Content/Background.xnb</DestFile>
+  <DestTime>2025-03-06T11:06:33.6079202-07:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2024-08-16T11:05:56-06:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2024-08-16T11:05:56-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
