@@ -12,15 +12,17 @@ public class Cannon
     private CelAnimationPlayer _animationPlayer;
     private Vector2 _position, _direction;
     private float _speed;
-
+    private Rectangle _gameBoundingBox;
     public Vector2 Direction { set => _direction = value; }
-
-    internal void Initialize(Vector2 initialPosition)
+    public Rectangle BoundingBox 
+        {get => new Rectangle((int) _position.X, (int) _position.Y, _animationSequence.CelWidth, _animationSequence.CelHeight);}
+    internal void Initialize(Vector2 initialPosition, Rectangle gameBoundBox)
     {
         _position = initialPosition;
         _animationPlayer = new CelAnimationPlayer();
         _animationPlayer.Play(_animationSequence);
         _speed = _Speed; //we have a _speed data member in case we want to add _scale later
+        _gameBoundingBox = gameBoundBox;
     }
     internal void LoadContent(ContentManager content)
     {
@@ -31,7 +33,14 @@ public class Cannon
     internal void Update(GameTime gameTime)
     {
         _position += _direction * _speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
+        if(BoundingBox.Left < _gameBoundingBox.Left)
+        {
+            _position.X = _gameBoundingBox.Left;
+        }
+        else if(BoundingBox.Right > _gameBoundingBox.Right)
+        {
+            _position.X = _gameBoundingBox.Right - BoundingBox.Width;
+        }
         _animationPlayer.Update(gameTime);
     }
     internal void Draw(SpriteBatch spriteBatch)
