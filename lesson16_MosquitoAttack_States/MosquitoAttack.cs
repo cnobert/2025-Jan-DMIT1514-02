@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Security.Cryptography;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,6 +15,11 @@ public class MosquitoAttack : Game
     private SpriteFont _arial;
 
     private Cannon _cannon;
+    private enum GameState { Playing, Paused, Over }
+    private GameState _gameState;
+
+    private KeyboardState _kbPreviousState;
+    private string _status = "";
 
     public MosquitoAttack()
     {
@@ -35,6 +41,9 @@ public class MosquitoAttack : Game
 
         Rectangle gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         _cannon.Initialize(new Vector2(50, 325), gameBoundingBox);
+
+        _gameState = GameState.Playing;
+        _kbPreviousState = Keyboard.GetState();
     }
 
     protected override void LoadContent()
@@ -47,23 +56,42 @@ public class MosquitoAttack : Game
 
     protected override void Update(GameTime gameTime)
     {
-        #region keybard input
         KeyboardState kbState = Keyboard.GetState();
-        if(kbState.IsKeyDown(Keys.Left))
-        {
-            _cannon.Direction = new Vector2(-1, 0);
-        }
-        else if(kbState.IsKeyDown(Keys.Right))
-        {
-            _cannon.Direction = new Vector2(1, 0);
-        }
-        else //come to a stop if neither key is being pressed
-        {
-            _cannon.Direction = new Vector2(0, 0);
-        }
-        #endregion
 
-        _cannon.Update(gameTime);
+        switch(_gameState)
+        {
+            case GameState.Playing:
+                if(kbState.IsKeyDown(Keys.Left))
+                {
+                    _cannon.Direction = new Vector2(-1, 0);
+                }
+                else if(kbState.IsKeyDown(Keys.Right))
+                {
+                    _cannon.Direction = new Vector2(1, 0);
+                }
+                else //come to a stop if neither key is being pressed
+                {
+                    _cannon.Direction = new Vector2(0, 0);
+                }
+                _cannon.Update(gameTime);
+                //is this a new key down event?
+                if(kbState.IsKeyDown(Keys.P) && _kbPreviousState.IsKeyUp(Keys.P))
+                {
+                    _gameState = GameState.Paused;
+                    _status = "Game paused. Press P to start playing again.";
+                }
+                break;
+            case GameState.Paused:
+                if(kbState.IsKeyDown(Keys.P) && _kbPreviousState.IsKeyUp(Keys.P))
+                {
+                    _gameState = GameState.Playing;
+                    _status = "";
+                }
+                break;
+            case GameState.Over:
+                break;
+        }
+        _kbPreviousState = kbState;
         base.Update(gameTime);
     }
 
@@ -74,7 +102,18 @@ public class MosquitoAttack : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_background, Vector2.Zero, Color.White);
-        _cannon.Draw(_spriteBatch);
+
+        switch(_gameState)
+        {
+            case GameState.Playing:
+                _cannon.Draw(_spriteBatch);
+                break;
+            case GameState.Paused:
+                _spriteBatch.DrawString(_arial, _status, new Vector2(20, 50), Color.White);
+                break;
+            case GameState.Over:
+                break;
+        }
         _spriteBatch.End();
 
         base.Draw(gameTime);

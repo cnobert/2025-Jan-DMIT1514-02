@@ -41,7 +41,16 @@ public class Cannon
         {
             _position.X = _gameBoundingBox.Right - BoundingBox.Width;
         }
-        _animationPlayer.Update(gameTime);
+        else//if(!_direction.Equals(Vector2.Zero))
+        {
+            //another way: if(_direction.X != 0)
+            //if we're in this "else", the cannon is not on the sides
+            if(!_direction.Equals(Vector2.Zero))
+            {
+                //if we're in this "if", the cannon is moving
+                _animationPlayer.Update(gameTime);
+            }
+        }
     }
     internal void Draw(SpriteBatch spriteBatch)
     {

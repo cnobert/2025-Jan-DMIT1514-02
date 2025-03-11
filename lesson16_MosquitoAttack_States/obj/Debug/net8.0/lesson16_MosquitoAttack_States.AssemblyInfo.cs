@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson16_MosquitoAttack_States")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be279cc898cfd379609f0a3c5a2e129e32aecc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+597f02cd833fb9b4c6af3281c65d9843d744c9a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson16_MosquitoAttack_States")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson16_MosquitoAttack_States")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
