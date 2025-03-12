@@ -14,6 +14,8 @@ public class MosquitoAttack : Game
     private SpriteFont _arial;
 
     private Cannon _cannon;
+    private Mosquito _mosquito;
+
     private enum GameState { Playing, Paused, Over }
     private GameState _gameState;
 
@@ -33,13 +35,15 @@ public class MosquitoAttack : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
 
-        _cannon = new Cannon(); 
+        _cannon = new Cannon();
+        _mosquito = new Mosquito(); 
 
-        base.Initialize(); //this method call invokes LoadContent, 
-        // thereby making cannon._animationSequence exist
+        base.Initialize(); //this method call invokes LoadContent, thereby making cannon._animationSequence exist
 
         Rectangle gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         _cannon.Initialize(new Vector2(50, 325), gameBoundingBox);
+
+        _mosquito.Initialize(new Vector2(25, 25), gameBoundingBox, 250, new Vector2(-1, 0));
 
         _gameState = GameState.Playing;
         _kbPreviousState = Keyboard.GetState();
@@ -51,6 +55,7 @@ public class MosquitoAttack : Game
         _background = Content.Load<Texture2D>("Background");
         _arial = Content.Load<SpriteFont>("SystemArialFont");
         _cannon.LoadContent(Content);
+        _mosquito.LoadContent(Content);
     }
 
     protected override void Update(GameTime gameTime)
@@ -73,6 +78,7 @@ public class MosquitoAttack : Game
                     _cannon.Direction = new Vector2(0, 0);
                 }
                 _cannon.Update(gameTime);
+                _mosquito.Update(gameTime);
                 //is this a new key down event?
                 if(kbState.IsKeyDown(Keys.P) && _kbPreviousState.IsKeyUp(Keys.P))
                 {
@@ -106,6 +112,7 @@ public class MosquitoAttack : Game
         {
             case GameState.Playing:
                 _cannon.Draw(_spriteBatch);
+                _mosquito.Draw(_spriteBatch);
                 break;
             case GameState.Paused:
                 _spriteBatch.DrawString(_arial, _status, new Vector2(20, 50), Color.White);
