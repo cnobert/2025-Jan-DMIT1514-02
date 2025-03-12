@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson15_MosquitoAttack_Can
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson16_MosquitoAttack_States", "lesson16_MosquitoAttack_States\lesson16_MosquitoAttack_States.csproj", "{312994D2-C928-4017-8DF3-56C9EA400869}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson17_MosquitoAttack_Mosquito", "lesson17_MosquitoAttack_Mosquito\lesson17_MosquitoAttack_Mosquito.csproj", "{DB3A1887-30F4-42E8-BB80-77D004E4D4DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,5 +124,9 @@ Global
 		{312994D2-C928-4017-8DF3-56C9EA400869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{312994D2-C928-4017-8DF3-56C9EA400869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{312994D2-C928-4017-8DF3-56C9EA400869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3A1887-30F4-42E8-BB80-77D004E4D4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3A1887-30F4-42E8-BB80-77D004E4D4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3A1887-30F4-42E8-BB80-77D004E4D4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3A1887-30F4-42E8-BB80-77D004E4D4DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

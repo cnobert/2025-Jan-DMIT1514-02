@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/CannonBall.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/Mosquito.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/Background.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/Cannon.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/Poof.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/Fireball.png</File>
+    <File>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson17_MosquitoAttack_Mosquito/Content/SystemArialFont.spritefont</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
