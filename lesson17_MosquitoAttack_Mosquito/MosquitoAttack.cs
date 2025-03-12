@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,7 +7,7 @@ namespace lesson17_MosquitoAttack_Mosquito;
 
 public class MosquitoAttack : Game
 {
-    private const int _WindowWidth = 550, _WindowHeight = 400;
+    private const int _WindowWidth = 550, _WindowHeight = 400, _NumMosquitoes = 20;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -14,7 +15,7 @@ public class MosquitoAttack : Game
     private SpriteFont _arial;
 
     private Cannon _cannon;
-    private Mosquito _mosquito;
+    private Mosquito [] _mosquitoes;
 
     private enum GameState { Playing, Paused, Over }
     private GameState _gameState;
@@ -36,15 +37,29 @@ public class MosquitoAttack : Game
         _graphics.ApplyChanges();
 
         _cannon = new Cannon();
-        _mosquito = new Mosquito(); 
 
+        _mosquitoes = new Mosquito[_NumMosquitoes];
+        for(int c = 0; c < _NumMosquitoes; c++)
+        {
+            _mosquitoes[c] = new Mosquito(); 
+        }
         base.Initialize(); //this method call invokes LoadContent, thereby making cannon._animationSequence exist
 
         Rectangle gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
         _cannon.Initialize(new Vector2(50, 325), gameBoundingBox);
 
-        _mosquito.Initialize(new Vector2(25, 25), gameBoundingBox, 250, new Vector2(-1, 0));
-
+        Random random = new Random();
+        foreach(Mosquito mosquito in _mosquitoes)
+        {
+            int direction = random.Next(1, 3);
+            if(direction == 2)
+            {
+                direction = -1;
+            }
+            int xPosition = random.Next(1, _WindowWidth - mosquito.BoundingBox.Width);
+            int speed = random.Next(50, 251);
+            mosquito.Initialize(new Vector2(xPosition, 25), gameBoundingBox, speed, new Vector2(direction, 0));
+        }
         _gameState = GameState.Playing;
         _kbPreviousState = Keyboard.GetState();
     }
@@ -55,7 +70,10 @@ public class MosquitoAttack : Game
         _background = Content.Load<Texture2D>("Background");
         _arial = Content.Load<SpriteFont>("SystemArialFont");
         _cannon.LoadContent(Content);
-        _mosquito.LoadContent(Content);
+        foreach(Mosquito mosquito in _mosquitoes)
+        {
+            mosquito.LoadContent(Content);
+        }
     }
 
     protected override void Update(GameTime gameTime)
@@ -78,7 +96,10 @@ public class MosquitoAttack : Game
                     _cannon.Direction = new Vector2(0, 0);
                 }
                 _cannon.Update(gameTime);
-                _mosquito.Update(gameTime);
+                foreach(Mosquito mosquito in _mosquitoes)
+                {
+                    mosquito.Update(gameTime);
+                }
                 //is this a new key down event?
                 if(kbState.IsKeyDown(Keys.P) && _kbPreviousState.IsKeyUp(Keys.P))
                 {
@@ -112,7 +133,10 @@ public class MosquitoAttack : Game
         {
             case GameState.Playing:
                 _cannon.Draw(_spriteBatch);
-                _mosquito.Draw(_spriteBatch);
+                foreach(Mosquito mosquito in _mosquitoes)
+                {
+                    mosquito.Draw(_spriteBatch);
+                }
                 break;
             case GameState.Paused:
                 _spriteBatch.DrawString(_arial, _status, new Vector2(20, 50), Color.White);
