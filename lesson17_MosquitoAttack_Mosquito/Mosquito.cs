@@ -10,31 +10,22 @@ public class Mosquito
         private CelAnimationSequence _animationSequence;
         private CelAnimationPlayer _animationPlayer;
 
-        private Vector2 _position;
+        private Vector2 _position, _direction;
         private float _speed;
-        private Vector2 _direction;
 
         private Rectangle _gameBoundingBox;
         internal Rectangle BoundingBox
-        {
-            get
-            {
-                //return new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));
-                return new Rectangle((int)_position.X, (int)_position.Y, _animationSequence.CelWidth, _animationSequence.CelHeight);
-            }
+        {   
+            get{    return new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));}
         }
-        internal void Initialize(Vector2 position, float speed, Vector2 direction, Rectangle gameBoundingBox)
+        internal void Initialize(Vector2 position, Rectangle gameBoundingBox, float speed, Vector2 direction)
         {
-            _speed = speed;
-            _position = position;
             _direction = direction;
-
-            _gameBoundingBox = gameBoundingBox;
-
+            _position = position;
             _animationPlayer = new CelAnimationPlayer();
-
-            //we need to make that the _animationSequence is not null before this code runs
             _animationPlayer.Play(_animationSequence);
+            _speed = speed;
+            _gameBoundingBox = gameBoundingBox;
         }
 
         internal void LoadContent(ContentManager content)
