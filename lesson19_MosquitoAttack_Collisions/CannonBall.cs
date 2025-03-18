@@ -17,6 +17,7 @@ public class CannonBall
         NotFlying
     }
     private State _state;
+    
     internal Rectangle BoundingBox
     {
         get
@@ -73,5 +74,9 @@ public class CannonBall
             shot = true;
         }
         return shot;
+    }
+    internal bool ProcessCollision(Rectangle boundingBox)
+    {
+        return _state == State.Flying && BoundingBox.Intersects(boundingBox);
     }
 }

@@ -106,6 +106,10 @@ public class MosquitoAttack : Game
                 foreach(Mosquito mosquito in _mosquitoes)
                 {
                     mosquito.Update(gameTime);
+                    if(_cannon.ProcessCollision(mosquito.BoundingBox))
+                    {
+                        mosquito.Die();
+                    }
                 }
                 //is this a new key down event?
                 if(kbState.IsKeyDown(Keys.P) && _kbPreviousState.IsKeyUp(Keys.P))

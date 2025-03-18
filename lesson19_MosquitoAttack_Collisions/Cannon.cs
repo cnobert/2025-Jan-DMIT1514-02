@@ -88,10 +88,6 @@ public class Cannon
 
     internal void Shoot()
     {
-        //exercise: write this Shoot method:
-        // loop through the _cannonBalls until you find one that is not flying
-        // shoot it
-        //_cannonBall.Shoot(new Vector2(BoundingBox.Center.X, BoundingBox.Top), new Vector2(0, -1), 50);
         int cannonBallIndex = 0;
         bool shot = false;
         while(cannonBallIndex < _NumCannonBalls && !shot)
@@ -99,6 +95,16 @@ public class Cannon
             shot = _cannonBalls[cannonBallIndex].Shoot(new Vector2(BoundingBox.Center.X, BoundingBox.Top), new Vector2(0, -1), 50);
             cannonBallIndex++;
         }
-    
+    }
+    internal bool ProcessCollision(Rectangle boundingBox)
+    {
+        bool hit = false;
+        int c = 0;
+        while(!hit && c < _cannonBalls.Length)
+        {
+            hit = _cannonBalls[c].ProcessCollision(boundingBox);
+            c++;
+        }
+        return hit;
     }
 }
