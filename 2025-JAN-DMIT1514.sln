@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson18_MosquitoAttack_Can
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson19_MosquitoAttack_Collisions", "lesson19_MosquitoAttack_Collisions\lesson19_MosquitoAttack_Collisions.csproj", "{D4E6161A-D90A-4FDC-9A50-1925AD9370BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson20_MosquitoAttack_FireBalls", "lesson20_MosquitoAttack_FireBalls\lesson20_MosquitoAttack_FireBalls.csproj", "{F8179BA7-0882-48DF-A36E-4488C114D804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,5 +145,9 @@ Global
 		{D4E6161A-D90A-4FDC-9A50-1925AD9370BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E6161A-D90A-4FDC-9A50-1925AD9370BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4E6161A-D90A-4FDC-9A50-1925AD9370BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8179BA7-0882-48DF-A36E-4488C114D804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8179BA7-0882-48DF-A36E-4488C114D804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8179BA7-0882-48DF-A36E-4488C114D804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8179BA7-0882-48DF-A36E-4488C114D804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
