@@ -106,9 +106,9 @@ public class MosquitoAttack : Game
                 foreach(Mosquito mosquito in _mosquitoes)
                 {
                     mosquito.Update(gameTime);
-                    if(_cannon.ProcessCollision(mosquito.BoundingBox))
+                    if(mosquito.Alive && _cannon.ProcessCollision(mosquito.BoundingBox))
                     {
-                        //mosquito.Die();
+                        mosquito.Die();
                     }
                 }
                 //is this a new key down event?

@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,6 +25,15 @@ public class Mosquito
         {   
             get{    return new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));}
         }
+        // internal bool Alive 
+        // {
+        //     get 
+        //     {
+        //         return _state == State.Alive;
+        //     }
+        // }
+        internal bool Alive => _state == State.Alive;
+        
         internal void Initialize(Vector2 position, Rectangle gameBoundingBox, float speed, Vector2 direction)
         {
             _direction = direction;
@@ -53,6 +63,7 @@ public class Mosquito
                     _animationPlayer.Update(gameTime);
                     break;
                 case State.Dying:
+                    _state = State.Dead;
                     break;
                 case State.Dead:
                     break;
@@ -70,5 +81,10 @@ public class Mosquito
                 case State.Dead:
                     break;
             }
+        }
+        internal void Die()
+        {
+            //the mosquito has been hit
+            _state = State.Dying;
         }
     }
