@@ -21,19 +21,16 @@ public class Mosquito
         private State _state;
 
         private Rectangle _gameBoundingBox;
-        internal Rectangle BoundingBox
-        {   
-            get{    return new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));}
-        }
-        // internal bool Alive 
-        // {
-        //     get 
-        //     {
-        //         return _state == State.Alive;
-        //     }
-        // }
-        internal bool Alive => _state == State.Alive;
+        internal Rectangle BoundingBox =>
+            new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));
         
+        internal bool Alive => _state == State.Alive;
+
+        private FireBall _fireBall;
+        public Mosquito()
+        {
+            _fireBall = new FireBall();
+        }
         internal void Initialize(Vector2 position, Rectangle gameBoundingBox, float speed, Vector2 direction)
         {
             _direction = direction;
@@ -43,12 +40,16 @@ public class Mosquito
             _speed = speed;
             _gameBoundingBox = gameBoundingBox;
 
+            _fireBall.Initialize(gameBoundingBox);
+            _fireBall.Shoot(_position, new Vector2(0, 1), 150);
+
             _state = State.Alive;
         }
 
         internal void LoadContent(ContentManager content)
         {
             _animationSequence = new CelAnimationSequence(content.Load<Texture2D>("Mosquito"), 46, 1 / 8.0f);
+            _fireBall.LoadContent(content);
         }
         internal void Update(GameTime gameTime)
         {
@@ -61,6 +62,7 @@ public class Mosquito
                         _direction.X *= -1;
                     }
                     _animationPlayer.Update(gameTime);
+                    _fireBall.Update(gameTime);
                     break;
                 case State.Dying:
                     _state = State.Dead;
@@ -75,6 +77,7 @@ public class Mosquito
             {
                 case State.Alive:
                     _animationPlayer.Draw(spriteBatch, _position, SpriteEffects.None);
+                    _fireBall.Draw(spriteBatch);
                     break;
                 case State.Dying:
                     break;

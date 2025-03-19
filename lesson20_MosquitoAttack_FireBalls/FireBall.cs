@@ -6,7 +6,6 @@ namespace lesson20_MosquitoAttack_FireBalls;
 
 public class FireBall
 {
-    private const float Speed = 150;
     private Vector2 _position, _direction;
     private float _speed;
     private Rectangle _gameBoundingBox;
@@ -68,5 +67,19 @@ public class FireBall
             case State.NotFlying:
                 break;
         }
+    }
+    internal bool Shoot(Vector2 position, Vector2 direction, float speed)
+    {
+        bool shot = false;
+        if(_state == State.NotFlying)
+        {
+            //assuming that the position passed down is where the centre of the cannonBall should be
+            _position = new Vector2(position.X - _animationSequence.CelWidth / 2, position.Y);
+            _direction = direction;
+            _speed = speed;
+            _state = State.Flying;
+            shot = true;
+        }
+        return shot;
     }
 }
