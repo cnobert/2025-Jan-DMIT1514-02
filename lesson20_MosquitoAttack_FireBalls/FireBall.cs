@@ -4,12 +4,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace lesson20_MosquitoAttack_FireBalls;
 
-public class CannonBall 
+public class FireBall
 {
+    private const float Speed = 150;
     private Vector2 _position, _direction;
     private float _speed;
     private Rectangle _gameBoundingBox;
-    private Texture2D _texture;
 
     private enum State 
     {
@@ -17,22 +17,30 @@ public class CannonBall
         NotFlying
     }
     private State _state;
-    
+    private CelAnimationSequence _animationSequence;
+    private CelAnimationPlayer _animationPlayer;
     internal Rectangle BoundingBox
     {
         get
         {
-            return new Rectangle(_position.ToPoint(), new Point(_texture.Width, _texture.Height));
+            return new Rectangle(_position.ToPoint(), new Point(_animationSequence.CelWidth, _animationSequence.CelHeight));
         }
     }
+
+    public FireBall()
+    {
+        _animationPlayer = new CelAnimationPlayer();
+    }
+
     internal void Initialize(Rectangle gameBoundingBox)
     {
         _gameBoundingBox = gameBoundingBox;
         _state = State.NotFlying;
+        _animationPlayer.Play(_animationSequence);
     }
     internal void LoadContent(ContentManager content)
     {
-        _texture = content.Load<Texture2D>("CannonBall");
+        _animationSequence = new CelAnimationSequence(content.Load<Texture2D>("FireBall"), 5, 1 / 8f);
     }
     internal void Update(GameTime gameTime)
     {
@@ -44,6 +52,7 @@ public class CannonBall
                 {
                     _state = State.NotFlying;
                 }
+                _animationPlayer.Update(gameTime);
                 break;
             case State.NotFlying:
                 break;
@@ -54,35 +63,10 @@ public class CannonBall
         switch(_state)
         {
             case State.Flying:
-                spriteBatch.Draw(_texture, _position, Color.White);
+                _animationPlayer.Draw(spriteBatch, _position, SpriteEffects.None);
                 break;
             case State.NotFlying:
                 break;
         }
-    }
-    internal bool Shoot(Vector2 position, Vector2 direction, float speed)
-    {
-        bool shot = false;
-        if(_state == State.NotFlying)
-        {
-            //assuming that the position passed down is where the centre of the cannonBall should be
-            _position = new Vector2(position.X - _texture.Width / 2, position.Y);
-            _direction = direction;
-            _speed = speed;
-            _state = State.Flying;
-            shot = true;
-        }
-        return shot;
-    }
-    internal bool ProcessCollision(Rectangle boundingBox)
-    {
-        bool didHit = false;
-        if(_state == State.Flying && BoundingBox.Intersects(boundingBox))
-        {
-            didHit = true;
-            //take myself out of play
-            _state = State.NotFlying;
-        }
-        return didHit;
     }
 }
