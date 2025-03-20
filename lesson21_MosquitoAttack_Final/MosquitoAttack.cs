@@ -10,7 +10,6 @@ public class MosquitoAttack : Game
     private const int _WindowWidth = 550, _WindowHeight = 400, _NumMosquitoes = 20;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
     private Texture2D _background;
     private SpriteFont _arial;
 
