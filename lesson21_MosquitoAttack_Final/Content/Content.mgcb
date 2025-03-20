@@ -1,0 +1,50 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin CannonBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:CannonBall.png
+
+#begin Mosquito.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Mosquito.png
+
+#begin Background.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Background.png
+
+#begin Cannon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Cannon.png
+
+#begin Poof.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Poof.png
+
+#begin Fireball.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Fireball.png
+
+#begin SystemArialFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:SystemArialFont.spritefont
+
