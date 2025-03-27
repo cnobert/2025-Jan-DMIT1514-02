@@ -15,6 +15,8 @@ public class MosquitoAttack : Game
 
     private Cannon _cannon;
 
+    private HUD _hud;
+
     private Mosquito [] _mosquitoes;
 
     private enum GameState { Playing, Paused, Over }
@@ -108,6 +110,14 @@ public class MosquitoAttack : Game
                     if(mosquito.Alive && _cannon.ProcessCollision(mosquito.BoundingBox))
                     {
                         mosquito.Die();
+                    }
+                    if(_cannon.Alive && _mosquitoes.ProcessCollision(_cannon.BoundingBox))
+                    {
+                        _hud.Lives--;
+                        if(_hud.Lives <= 0)
+                        {
+                            _gameState = GameState.Over;
+                        }
                     }
                 }
                 //is this a new key down event?

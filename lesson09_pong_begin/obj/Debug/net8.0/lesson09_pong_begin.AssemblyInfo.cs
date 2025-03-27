@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson09_pong_begin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b1ceb24eeba4f9ebddeac6afe768c8c8a8fce72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a9bfc085124f05d3ca03a8d0a2f30e7a2e17db7")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson09_pong_begin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson09_pong_begin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
