@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson23_MosquitoAttack_Polymorphism/Content/Cannon.png</SourceFile>
+  <SourceTime>2025-04-01T08:00:38.8484465-06:00</SourceTime>
+  <DestFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson23_MosquitoAttack_Polymorphism/Content/bin/DesktopGL/Content/Cannon.xnb</DestFile>
+  <DestTime>2025-04-01T08:02:21.8704955-06:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2024-08-16T11:05:56-06:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2024-08-16T11:05:56-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
