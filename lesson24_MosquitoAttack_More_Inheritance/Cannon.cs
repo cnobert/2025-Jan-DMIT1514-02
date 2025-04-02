@@ -2,24 +2,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace lesson24_MosquitoAttack_More_Inheritance;
 
-public class Cannon 
+public class Cannon : GameBot
 {
-    private const float _Speed = 250;
     private const int _NumProjectiles = 5;
-    private CelAnimationSequence _animationSequence;
-    private CelAnimationPlayer _animationPlayer;
-    private Vector2 _position, _direction;
-    private float _speed;
-    private Rectangle _gameBoundingBox;
-    public Vector2 Direction { set => _direction = value; }
-    public Rectangle BoundingBox 
-        {get => new Rectangle((int) _position.X, (int) _position.Y, _animationSequence.CelWidth, _animationSequence.CelHeight);}
+    internal Vector2 Direction { set => _direction = value; }
     private Projectile[] _projectiles;
-    
-    public Cannon()
+    internal Cannon()
     {
         _projectiles = new Projectile[_NumProjectiles];
         _projectiles[0] = new CannonBall();
@@ -29,64 +19,67 @@ public class Cannon
         _projectiles[4] = new FireBall();
     }
     
-    internal void Initialize(Vector2 initialPosition, Rectangle gameBoundingBox)
+    internal override void Initialize(Vector2 initialPosition, Rectangle gameBoundingBox, float speed)
     {
-        _position = initialPosition;
-        _animationPlayer = new CelAnimationPlayer();
-        _animationPlayer.Play(_animationSequence);
-        _speed = _Speed; //we have a _speed data member in case we want to add _scale later
-        _gameBoundingBox = gameBoundingBox;
-
+        base.Initialize(initialPosition, gameBoundingBox, speed);
         foreach(Projectile p in _projectiles)
         {
             p.Initialize(gameBoundingBox);
         }
     }
-    internal void LoadContent(ContentManager content)
+    internal override void LoadContent(ContentManager content)
     {
-        _animationSequence = 
+        _animationSequenceAlive = 
             new CelAnimationSequence(content.Load<Texture2D>("Cannon"), 40, 1 / 8.0f);
         foreach(Projectile p in _projectiles)
         {
             p.LoadContent(content);
         }
     }
-    internal void Update(GameTime gameTime)
+    internal override void Update(GameTime gameTime)
     {
-        _position += _direction * _speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-        if(BoundingBox.Left < _gameBoundingBox.Left)
+        base.Update(gameTime);
+        switch(_state)
         {
-            _position.X = _gameBoundingBox.Left;
-        }
-        else if(BoundingBox.Right > _gameBoundingBox.Right)
-        {
-            _position.X = _gameBoundingBox.Right - BoundingBox.Width;
-        }
-        else//if(!_direction.Equals(Vector2.Zero))
-        {
-            //another way: if(_direction.X != 0)
-            //if we're in this "else", the cannon is not on the sides
-            if(!_direction.Equals(Vector2.Zero))
-            {
-                //if we're in this "if", the cannon is moving
-                _animationPlayer.Update(gameTime);
-            }
+            case State.Alive:
+                if(BoundingBox.Left < _gameBoundingBox.Left)
+                {
+                    _position.X = _gameBoundingBox.Left;
+                }
+                else if(BoundingBox.Right > _gameBoundingBox.Right)
+                {
+                    _position.X = _gameBoundingBox.Right - BoundingBox.Width;
+                }
+                else
+                {
+                    //if we're in this "else", the cannon is not on the sides
+                    if(!_direction.Equals(Vector2.Zero))
+                    {
+                        //if we're in this "if", the cannon is moving
+                        _animationPlayer.Update(gameTime);
+                    }
+                }
+                break;
+            case State.Dying:
+                break;
+            case State.Dead:
+                break;
         }
         foreach(Projectile p in _projectiles)
         {
             p.Update(gameTime);
         }
     }
-    internal void Draw(SpriteBatch spriteBatch)
+    internal override void Draw(SpriteBatch spriteBatch)
     {
-        _animationPlayer.Draw(spriteBatch, _position, SpriteEffects.None);
+        base.Draw(spriteBatch);
         foreach(Projectile p in _projectiles)
         {
             p.Draw(spriteBatch);
         }
     }
 
-    internal void Shoot()
+    internal override void Shoot()
     {
         int cannonBallIndex = 0;
         bool shot = false;

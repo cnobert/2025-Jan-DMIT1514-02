@@ -1,16 +1,13 @@
-using System;
-using System.Reflection.Metadata.Ecma335;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-
 
 namespace lesson24_MosquitoAttack_More_Inheritance;
 
 public class Mosquito
     {
         private const int _UpperRandomFiringRange = 100;
-        private Random _randomNumberGenerator = new Random();
+        private System.Random _randomNumberGenerator = new System.Random();
         private CelAnimationSequence _animationSequenceAlive;
         private CelAnimationSequence _animationSequenceDying;
         private CelAnimationPlayer _animationPlayer;

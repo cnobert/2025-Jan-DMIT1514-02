@@ -46,7 +46,7 @@ public class MosquitoAttack : Game
         base.Initialize(); //this method call invokes LoadContent, thereby making cannon._animationSequence exist
 
         Rectangle gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
-        _cannon.Initialize(new Vector2(50, 325), gameBoundingBox);
+        _cannon.Initialize(new Vector2(50, 325), gameBoundingBox, 250);//250 is the speed
 
         Random random = new Random();
         foreach(Mosquito mosquito in _mosquitoes)
