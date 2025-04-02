@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson23_MosquitoAttack_Polymorphism")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0e0c4c92a7ab9a7f14498cdb9eb909c6a82f447")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ad893084e79ac93baa91f23ce96a0e6a20a9a1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson23_MosquitoAttack_Polymorphism")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson23_MosquitoAttack_Polymorphism")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

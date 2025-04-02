@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson24_MosquitoAttack_More_Inheritance/Content/Mosquito.png</SourceFile>
+  <SourceTime>2025-04-01T09:42:28.5962719-06:00</SourceTime>
+  <DestFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson24_MosquitoAttack_More_Inheritance/Content/bin/DesktopGL/Content/Mosquito.xnb</DestFile>
+  <DestTime>2025-04-02T07:53:55.9027834-06:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2024-08-16T11:05:56-06:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2024-08-16T11:05:56-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

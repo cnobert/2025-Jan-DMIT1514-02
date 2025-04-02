@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson22_MosquitoAttack_Inh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson23_MosquitoAttack_Polymorphism", "lesson23_MosquitoAttack_Polymorphism\lesson23_MosquitoAttack_Polymorphism.csproj", "{0316A051-F11A-439A-A379-3E96D922100E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson24_MosquitoAttack_More_Inheritance", "lesson24_MosquitoAttack_More_Inheritance\lesson24_MosquitoAttack_More_Inheritance.csproj", "{E9916F0C-86FB-47AE-9422-256CCD3C8553}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,5 +169,17 @@ Global
 		{0316A051-F11A-439A-A379-3E96D922100E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0316A051-F11A-439A-A379-3E96D922100E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0316A051-F11A-439A-A379-3E96D922100E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF83A8E-2075-4D09-8846-A019A2E5FD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF83A8E-2075-4D09-8846-A019A2E5FD07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF83A8E-2075-4D09-8846-A019A2E5FD07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF83A8E-2075-4D09-8846-A019A2E5FD07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFB507A-6470-4BAD-B37D-64AA2765FC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFB507A-6470-4BAD-B37D-64AA2765FC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFB507A-6470-4BAD-B37D-64AA2765FC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFB507A-6470-4BAD-B37D-64AA2765FC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9916F0C-86FB-47AE-9422-256CCD3C8553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9916F0C-86FB-47AE-9422-256CCD3C8553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9916F0C-86FB-47AE-9422-256CCD3C8553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9916F0C-86FB-47AE-9422-256CCD3C8553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

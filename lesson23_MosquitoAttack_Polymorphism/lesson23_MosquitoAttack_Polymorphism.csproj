@@ -9,7 +9,8 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
-  </PropertyGroup><ItemGroup>
+  </PropertyGroup>
+  <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
 </ItemGroup>
   <ItemGroup>
