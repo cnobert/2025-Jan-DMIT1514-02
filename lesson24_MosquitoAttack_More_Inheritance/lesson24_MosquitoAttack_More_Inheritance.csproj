@@ -12,6 +12,9 @@
   </PropertyGroup><ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
 </ItemGroup>
+<ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+</ItemGroup>
   <ItemGroup>
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
