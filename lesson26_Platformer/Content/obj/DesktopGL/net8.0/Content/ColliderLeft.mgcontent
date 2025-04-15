@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/Content/ColliderLeft.png</SourceFile>
+  <SourceTime>2025-04-15T08:11:51.9956548-06:00</SourceTime>
+  <DestFile>/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/Content/bin/DesktopGL/Content/ColliderLeft.xnb</DestFile>
+  <DestTime>2025-04-15T08:12:02.5467607-06:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2025-04-05T04:10:54-06:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2025-04-05T04:10:54-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

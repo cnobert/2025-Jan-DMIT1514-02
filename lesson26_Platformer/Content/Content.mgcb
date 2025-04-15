@@ -1,0 +1,55 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ColliderBottom.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:ColliderBottom.png
+
+#begin Idle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Idle.png
+
+#begin ColliderLeft.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:ColliderLeft.png
+
+#begin Walk.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Walk.png
+
+#begin ColliderTop.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:ColliderTop.png
+
+#begin ColliderRight.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:ColliderRight.png
+
+#begin JumpOne.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:JumpOne.png
+
+#begin SystemArialFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:SystemArialFont.spritefont
+

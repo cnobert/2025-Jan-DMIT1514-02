@@ -8,7 +8,6 @@ public abstract class Projectile
 {
     protected Vector2 _position, _direction, _dimensions;
     protected float _speed;
-    protected Vector2 _offset;
     protected Rectangle _gameBoundingBox;
     protected enum State 
     {
@@ -21,14 +20,13 @@ public abstract class Projectile
     {
         get
         {
-            return new Rectangle(_position.ToPoint() - _offset.ToPoint(), _dimensions.ToPoint());
+            return new Rectangle(_position.ToPoint(), _dimensions.ToPoint());
         }
     }
     //"virtual" means "my children may override this method, but it's not required
     internal virtual void Initialize(Rectangle gameBoundingBox)
     {
         _gameBoundingBox = gameBoundingBox;
-        _offset = new Vector2(-100, -200);
         _state = State.NotFlying;
     }
 

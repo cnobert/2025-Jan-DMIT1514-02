@@ -37,7 +37,7 @@ public class Mosquito
             _position = position;
             _animationPlayer = new CelAnimationPlayer();
             _animationPlayer.Play(_animationSequenceAlive);
-            _speed = speed;
+            _speed = 0;//speed;
             _gameBoundingBox = gameBoundingBox;
 
             _fireBall.Initialize(gameBoundingBox);

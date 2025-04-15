@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/lesson26_Platformer.csproj": {}
+  },
+  "projects": {
+    "/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/lesson26_Platformer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/lesson26_Platformer.csproj",
+        "projectName": "lesson26_Platformer",
+        "projectPath": "/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/lesson26_Platformer.csproj",
+        "packagesPath": "/Users/cnobert/.nuget/packages/",
+        "outputPath": "/Users/cnobert/Documents/GitHub/2025-Jan-DMIT1514-02/lesson26_Platformer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/cnobert/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Contentless": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "MonoGame.Content.Builder.Task": {
+              "target": "Package",
+              "version": "[3.8.*, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
