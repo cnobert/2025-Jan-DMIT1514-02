@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -50,7 +50,15 @@ public class Player
     {
         _animationPlayer.Update(gameTime);
 
+        _velocity.Y += Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds;
         _position += _velocity * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+        //are moving up or down faster than gravity?
+        if(Math.Abs(_velocity.Y) > Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds)
+        {
+            _state = State.Jumping;
+            _animationPlayer.Play(_jumpSequence);
+        }
 
         switch(_state)
         {
