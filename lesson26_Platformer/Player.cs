@@ -17,6 +17,7 @@ public class Player
     private CelAnimationPlayer _animationPlayer;
     private Vector2 _position;
     private Vector2 _velocity;
+    internal Vector2 Velocity { get => _velocity; }
     private Rectangle _gameBoundingBox;
     private Vector2 _dimensions;
     
@@ -27,6 +28,9 @@ public class Player
             return new Rectangle((int)_position.X, (int)_position.Y, (int)_dimensions.X, (int)_dimensions.Y);
         }
     }
+
+    
+
     public Player(Vector2 position, Rectangle gameBoundingBox)
     {
         _position = position;
