@@ -28,7 +28,7 @@ public class Platformer : Game
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
         _gameBoundingBox = new Rectangle(0, 0, _WindowWidth, _WindowHeight);
-        _player = new Player(new Vector2(50, 50), _gameBoundingBox);
+        _player = new Player(new Vector2(200, 50), _gameBoundingBox);
         _ground = new Collider(new Vector2(0, 300), new Vector2(_WindowWidth, 1), Collider.ColliderType.Top);
 
         //the top collider's top left corner is at 160, 270

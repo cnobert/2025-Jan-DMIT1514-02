@@ -41,7 +41,7 @@ public class Player
     {
         _state = State.Idle;
         _animationPlayer.Play(_idleSequence);
-        _dimensions = new Vector2(30, 34);
+        _dimensions = new Vector2(33, 34);
         _facingRight = true;
     }
     internal void LoadContent(ContentManager content)

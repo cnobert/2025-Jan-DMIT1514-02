@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson26_Platformer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d7f778bc9e6a4201857c8d30f8b754308731557")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b8f83c8cfc9b4bcc8224fc5d51e87a3861b74f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson26_Platformer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson26_Platformer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
