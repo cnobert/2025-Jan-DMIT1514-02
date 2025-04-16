@@ -55,6 +55,7 @@ public class Platformer : Game
         }
 
         _player.Update(gameTime);
+        _ground.ProcessCollision(_player, gameTime);
         base.Update(gameTime);
     }
     protected override void Draw(GameTime gameTime)

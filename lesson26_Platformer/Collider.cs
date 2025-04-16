@@ -47,4 +47,26 @@ public class Collider
     {
         spriteBatch.Draw(_texture, BoundingBox, new Rectangle(0, 0, 1, 1), Color.White);
     }
+    internal bool ProcessCollision(Player player, GameTime gameTime)
+    {
+        bool didCollide = false;
+        if(BoundingBox.Intersects(player.BoundingBox))
+        {
+            didCollide = true;
+            switch(_type)
+            {
+                case ColliderType.Left:
+                    break;
+                case ColliderType.Right:
+                    break;
+                case ColliderType.Top:
+                    player.Land(BoundingBox);
+                    player.StandOn(gameTime);
+                    break;
+                case ColliderType.Bottom:
+                    break;
+            }
+        }
+        return didCollide;
+    }
 }

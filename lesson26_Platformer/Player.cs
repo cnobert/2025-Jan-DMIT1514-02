@@ -37,7 +37,7 @@ public class Player
     {
         _state = State.Idle;
         _animationPlayer.Play(_idleSequence);
-        _dimensions = new Vector2(30, 46);
+        _dimensions = new Vector2(30, 34);
         _facingRight = true;
     }
     internal void LoadContent(ContentManager content)
@@ -53,7 +53,7 @@ public class Player
         _velocity.Y += Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds;
         _position += _velocity * (float) gameTime.ElapsedGameTime.TotalSeconds;
 
-        //are moving up or down faster than gravity?
+        //are we moving up or down faster than gravity? change to the jumping state
         if(Math.Abs(_velocity.Y) > Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds)
         {
             _state = State.Jumping;
@@ -97,7 +97,7 @@ public class Player
         {
             _facingRight = false;
         }
-        if(_state != State.Jumping)
+        if(_state == State.Idle)
         {
             _animationPlayer.Play(_walkSequence);
             _state = State.Walking;
@@ -111,5 +111,20 @@ public class Player
             _state = State.Idle;
             _animationPlayer.Play(_idleSequence);
         }
+    }
+    internal void Land(Rectangle whatILandedOn)
+    {
+        if(_state == State.Jumping)
+        {
+            //set our position on top of the collider, but
+            //sink us one pixel into it
+            _position.Y = whatILandedOn.Top - _dimensions.Y + 1;
+            _velocity.Y = 0;
+            _state = State.Walking;
+        }
+    }
+    internal void StandOn(GameTime gameTime)
+    {
+        _velocity.Y -= Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds;
     }
 }
