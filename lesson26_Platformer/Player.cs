@@ -7,7 +7,7 @@ namespace lesson26_Platformer;
 
 public class Player
 {
-    private const int _Speed = 150;
+    private const int _Speed = 150, _JumpForce = -100;
     private enum State { Idle, Walking, Jumping }
     private State _state;
     private bool _facingRight;
@@ -107,6 +107,11 @@ public class Player
             _state = State.Walking;
         }
     }
+    internal void MoveVertically(float direction)
+    {
+        _velocity.Y = direction * _Speed;
+    }
+
     internal void Stop()
     {
         _velocity.X = 0;
@@ -125,10 +130,18 @@ public class Player
             _position.Y = whatILandedOn.Top - _dimensions.Y + 1;
             _velocity.Y = 0;
             _state = State.Walking;
+            _animationPlayer.Play(_walkSequence);
         }
     }
     internal void StandOn(GameTime gameTime)
     {
         _velocity.Y -= Platformer._Gravity * (float) gameTime.ElapsedGameTime.TotalSeconds;
+    }
+    internal void Jump()
+    {
+        if(_state != State.Jumping)
+        {
+            _velocity.Y = _JumpForce;
+        }
     }
 }
